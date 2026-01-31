@@ -37,9 +37,9 @@ RUN make install
 ENV TRIBITS_BASE_DIR='/tribits'
 
 WORKDIR /
-RUN wget https://www.sandia.gov/app/uploads/sites/106/2022/06/charon-distrib-v2_2.tar.gz
-RUN mv charon-distrib-v2_2.tar.gz charon-distrib.tar.gz
-RUN tar hxvzf charon-distrib.tar.gz
+RUN wget https://www.sandia.gov/app/uploads/sites/106/2022/06/charon-distrib-v2_2.tar.gz; \
+    mv charon-distrib-v2_2.tar.gz charon-distrib.tar.gz; \
+    tar hxvzf charon-distrib.tar.gz
 WORKDIR tcad-charon
 RUN cd scripts/charonInterpreter/parseGenerator && python3 generateInterpreter.py
 
