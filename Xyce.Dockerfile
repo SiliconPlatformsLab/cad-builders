@@ -58,3 +58,7 @@ RUN mkdir xyce-build; \
     cmake --build . -j$(nproc); \
     cmake --build . -j$(nproc) --target xycecinterface; \
     sudo make install
+
+# Build installation artefacts
+WORKDIR /build/Xyce/xyce-build
+RUN cpack -B /dist -G DEB; cpack -B /dist -G RPM; cpack -B /dist -G TZST;
