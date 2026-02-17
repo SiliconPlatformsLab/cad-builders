@@ -12,6 +12,7 @@ jobs:
     container: ghcr.io/siliconplatformslab/xyce:master
     steps:
       - uses: actions/checkout@v5
+      - uses: actions4gh/setup-gh@v1
 
       - name: Get current date
         id: date
