@@ -15,7 +15,7 @@ RUN apt update --fix-missing; apt update && apt upgrade -y; \
     libhdf5-dev netcdf-bin cdftools libnetcdf-dev cmake libopenblas-dev libblas-dev libboost-all-dev screen \
     htop git-lfs vim-scripts build-essential libssl-dev ca-certificates gpg wget libmatio-dev
 
-## CMake (TODO use package for this)
+## CMake
 WORKDIR /tmp
 RUN wget https://github.com/Kitware/CMake/releases/download/v3.26.4/cmake-3.26.4-linux-x86_64.sh; \
     chmod +x cmake-3.26.4-linux-x86_64.sh; \
