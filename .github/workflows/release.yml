@@ -31,7 +31,8 @@ jobs:
         run: |
           cd /dist;
           ls -lah;
-          find / -type f;
           for artefact in XyceOpenSource*; do
-            gh release upload ${{ github.event.inputs.tag }} $artefact;
+            echo $artefact;
+            echo release-${{ steps.date.outputs.date }};
+            gh release upload release-${{ steps.date.outputs.date }} $artefact;
           done;
