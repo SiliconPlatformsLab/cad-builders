@@ -9,7 +9,8 @@ RUN sed --in-place --regexp-extended "s/(\/\/)(archive\.ubuntu)/\1au.\2/" /etc/a
 # Based on: https://github.com/siliconcompiler/siliconcompiler/blob/main/siliconcompiler/toolscripts/ubuntu20/install-xyce.sh
 RUN apt update; apt install -y build-essential gcc g++ make cmake automake autoconf bison flex git libblas-dev \
     liblapack-dev liblapack64-dev libfftw3-dev libsuitesparse-dev libopenmpi-dev libboost-all-dev \
-    libnetcdf-dev libmatio-dev gfortran libfl-dev libtool python3-venv wget
+    libnetcdf-dev libmatio-dev gfortran libfl-dev libtool python3-venv wget sudo ca-certificates \
+    software-properties-common
 
 # CMake
 WORKDIR /tmp
